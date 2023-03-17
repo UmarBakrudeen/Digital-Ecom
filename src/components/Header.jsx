@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <Fragment>
       <header className="header-top-strip py-3">
-        <div className="container-fluid">
+        <div className="container-xxl">
           <div className="row">
             <div className="col-6">
               <p className="text-white mb-0">

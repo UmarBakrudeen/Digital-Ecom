@@ -1,6 +1,11 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
+import Marque from 'react-fast-marquee';
+import BlogCards from "../components/BlogCards";
+import ProductCard from "../components/ProductCard";
+import SpecialProduct from "../components/SpecialProduct";
+
 const Home = () => {
   return (
     <Fragment>
@@ -134,8 +139,153 @@ const Home = () => {
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
-              <div className="categories"> </div>
+              <div className="categories">
+                <div className="d-flex gap-30 align-items-center">
+                  <div>
+                    <h6> Music & Gaming </h6>
+                    <p> 10 Items </p>
+                  </div>
+                  <img src="Assets/images/camera.jpg" alt="" />
+                </div>
+                <div className="d-flex gap-30 align-items-center">
+                  <div>
+                    <h6> Smart Tv </h6>
+                    <p> 10 Items </p>
+                  </div>
+                  <img src="Assets/images/tv.jpg" alt="" />
+                </div>
+                <div className="d-flex gap-30 align-items-center">
+                  <div>
+                    <h6> Smart Watches </h6>
+                    <p> 10 Items </p>
+                  </div>
+                  <img src="Assets/images/headphone.jpg" alt="headphone" />
+                </div>
+                <div className="d-flex gap-30 align-items-center">
+                  <div>
+                    <h6> Cameras </h6>
+                    <p> 10 Items </p>
+                  </div>
+                  <img src="Assets/images/camera.jpg" alt="" />
+                </div>
+                <div className="d-flex gap-30 align-items-center">
+                  <div>
+                    <h6> Music & Gaming </h6>
+                    <p> 10 Items </p>
+                  </div>
+                  <img src="Assets/images/camera.jpg" alt="" />
+                </div>
+                <div className="d-flex gap-30 align-items-center">
+                  <div>
+                    <h6> Smart Tv </h6>
+                    <p> 10 Items </p>
+                  </div>
+                  <img src="Assets/images/tv.jpg" alt="" />
+                </div>
+                <div className="d-flex gap-30 align-items-center">
+                  <div>
+                    <h6> Smart Watches </h6>
+                    <p> 10 Items </p>
+                  </div>
+                  <img src="Assets/images/headphone.jpg" alt="headphone" />
+                </div>
+                <div className="d-flex gap-30 align-items-center">
+                  <div>
+                    <h6> Cameras </h6>
+                    <p> 10 Items </p>
+                  </div>
+                  <img src="Assets/images/camera.jpg" alt="" />
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Product */}
+
+      <section className="featured-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="section-heading">
+                Featured Collection
+              </h3>
+            </div>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      </section>
+
+      {/* Special Product */}
+
+      <section className="special-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="section-heading"> Special Products </h3>
+            </div>
+            <div className="row">
+              <SpecialProduct />
+              <SpecialProduct />
+              <SpecialProduct />
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section className="marque-wrapper py-5">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <div className="marque-inner-wrapper card-wrapper">
+                <Marque className="d-flex">
+                  <div className="mx-4 w-25">
+                    <img src="Assets/images/brand-01.png" alt="Brand" />
+                  </div>
+                  <div className="mx-4 w-25">
+                    <img src="Assets/images/brand-02.png" alt="Brand" />
+                  </div>
+                  <div className="mx-4 w-25">
+                    <img src="Assets/images/brand-03.png" alt="Brand" />
+                  </div>
+                  <div className="mx-4 w-25">
+                    <img src="Assets/images/brand-04.png" alt="Brand" />
+                  </div>
+                  <div className="mx-4 w-25">
+                    <img src="Assets/images/brand-05.png" alt="Brand" />
+                  </div>
+                  <div className="mx-4 w-25">
+                    <img src="Assets/images/brand-06.png" alt="Brand" />
+                  </div>
+                  <div className="mx-4 w-25">
+                    <img src="Assets/images/brand-07.png" alt="Brand" />
+                  </div>
+                </Marque>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section className="blog-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="section-heading">
+                Our Latest Blogs
+              </h3>
+            </div>
+            <BlogCards />
+            <BlogCards />
+            <BlogCards />
+            <BlogCards />
           </div>
         </div>
       </section>
