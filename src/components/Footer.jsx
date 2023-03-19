@@ -12,11 +12,11 @@ const Footer = () => {
             <div className="col-5">
               <div className="footer-top-data d-flex align-items-center gap-30">
                 <img src="/Assets/images/newsletter.png" alt="newsletter" />
-                <h2 className="text-white"> Sign In for Newsletter </h2>
+                <h2 className="color-white"> Sign In for Newsletter </h2>
               </div>
             </div>
             <div className="col-7">
-              <div class="input-group">
+              <div className="input-group">
                 <input
                   type="text"
                   className="form-control py-2"
@@ -36,69 +36,69 @@ const Footer = () => {
       <footer className="py-4">
         <div className="container-xxl">
           <div className="row">
-            <div className="col-4">
-              <h4 className="text-white mb-4"> Contact Us </h4>
+            <div className="col-4 ">
+              <h4 className="color-white mb-4"> Contact Us </h4>
               <div>
-                <address className="text-white fs-6">
+                <address className="color-white fs-6">
                   No: 13, Ondriya Colony <br />
                   Thiruverumbur, Tiruchirappalli <br />
                   Tamil Nadu , India
                 </address>
                 <a
                   href="tel:+91 9865659501"
-                  className="mt-4 d-block mb-2 text-white"
+                  className="mt-4 d-block mb-2 color-white"
                 >
                   +91 9865659501
                 </a>
                 <a
                   href="mailto:thalaivaumar9501.s@gmail.com"
-                  className="mt-3 d-block mb-0 text-white"
+                  className="mt-3 d-block mb-0 color-white"
                 >
                   digiworld@gmail.com
                 </a>
                 <div className="social_icons d-flex align-items-center gap-30 mt-4">
-                  <a href="/" className="text-white">
+                  <a href="/" className="color-white">
                     <BsLinkedin className="fs-4" />
                   </a>
-                  <a href="/" className="text-white">
+                  <a href="/" className="color-white">
                     <BsGithub className="fs-4" />
                   </a>
-                  <a href="/" className="text-white">
+                  <a href="/" className="color-white">
                     <BsYoutube className="fs-4" />
                   </a>
-                  <a href="/" className="text-white">
+                  <a href="/" className="color-white">
                     <BsInstagram className="fs-4" />
                   </a>
                 </div>
               </div>
             </div>
             <div className="col-3">
-              <h4 className="text-white mb-4"> Information</h4>
+              <h4 className="color-white mb-4"> Information</h4>
               <div className="footer-links d-flex flex-column">
-                <Link className="text-white py-2 mb-1"> Privacy Policy </Link>
-                <Link className="text-white py-2 mb-1"> Refund Policy </Link>
-                <Link className="text-white py-2 mb-1"> Shipping Policy </Link>
-                <Link className="text-white py-2 mb-1">Terms & Conditions</Link>
-                <Link className="text-white py-2 mb-1"> Blogs </Link>
+                <Link to="/privacy-policy" className="color-white py-2 mb-1"> Privacy Policy </Link>
+                <Link to="/refund-policy" className="color-white py-2 mb-1"> Refund Policy </Link>
+                <Link className="color-white py-2 mb-1"> Shipping Policy </Link>
+                <Link className="color-white py-2 mb-1">Terms & Conditions</Link>
+                <Link className="color-white py-2 mb-1"> Blogs </Link>
               </div>
             </div>
             <div className="col-3">
-              <h4 className="text-white mb-4"> Account </h4>
+              <h4 className="color-white mb-4"> Account </h4>
               <div className="footer-links d-flex flex-column">
-                <Link className="text-white py-2 mb-1"> Search </Link>
-                <Link className="text-white py-2 mb-1"> About Us </Link>
-                <Link className="text-white py-2 mb-1"> FAQ </Link>
-                <Link className="text-white py-2 mb-1"> Contact </Link>
-                <Link className="text-white py-2 mb-1"> Size Chart </Link>
+                <Link className="color-white py-2 mb-1"> Search </Link>
+                <Link className="color-white py-2 mb-1"> About Us </Link>
+                <Link className="color-white py-2 mb-1"> FAQ </Link>
+                <Link className="color-white py-2 mb-1"> Contact </Link>
+                <Link className="color-white py-2 mb-1"> Size Chart </Link>
               </div>
             </div>
             <div className="col-2">
-              <h4 className="text-white mb-4"> Quick Links </h4>
+              <h4 className="color-white mb-4"> Quick Links </h4>
               <div className="footer-links d-flex flex-column">
-                <Link className="text-white py-2 mb-1"> Laptops </Link>
-                <Link className="text-white py-2 mb-1"> Headphones </Link>
-                <Link className="text-white py-2 mb-1"> Tablets </Link>
-                <Link className="text-white py-2 mb-1"> Watches </Link>
+                <Link className="color-white py-2 mb-1"> Laptops </Link>
+                <Link className="color-white py-2 mb-1"> Headphones </Link>
+                <Link className="color-white py-2 mb-1"> Tablets </Link>
+                <Link className="color-white py-2 mb-1"> Watches </Link>
               </div>
             </div>
           </div>
@@ -109,8 +109,11 @@ const Footer = () => {
           <div className="container-xxl">
             <div className="row">
               <div className="col-12">
-                <p className="text-center mb-0 text-white">
+                <p className="text-center mb-0 color-white">
                   &copy; {new Date().getFullYear()}: Powered by Black code
+                </p>
+                <p className="text-center mb-0 color-white">
+                  Developed and maintained by ThalaiavUmar &#128293;
                 </p>
               </div>
             </div>

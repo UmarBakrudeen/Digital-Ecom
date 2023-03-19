@@ -11,12 +11,12 @@ const Header = () => {
         <div className="container-xxl">
           <div className="row">
             <div className="col-6">
-              <p className="text-white mb-0">
+              <p className="color-white mb-0">
                 Free Shipping Over 1000 INR & Free Returns
               </p>
             </div>
             <div className="col-6">
-              <p className="text-end text-white">
+              <p className="text-end color-white">
                 Hotline: <a href="tel:+91 9865659501"> +91 9865659501 </a>
               </p>
             </div>
@@ -29,11 +29,11 @@ const Header = () => {
           <div className="row align-items-center">
             <div className="col-2">
               <h2>
-                <Link className="text-white"> Digi World </Link>
+                <Link className="color-white"> Digi World </Link>
               </h2>
             </div>
             <div className="col-5">
-              <div class="input-group">
+              <div className="input-group">
                 <input
                   type="text"
                   className="form-control py-2"
@@ -49,7 +49,7 @@ const Header = () => {
             <div className="col-5">
               <div className="header-upper-links d-flex align-items-center justify-content-between">
                 <div>
-                  <Link className="d-flex align-items-center gap-10 text-white">
+                  <Link className="d-flex align-items-center gap-10 color-white">
                     <img src="/Assets/images/compare.svg" alt="compare" />
                     <p>
                       Compare <br /> Product
@@ -57,7 +57,7 @@ const Header = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link className="d-flex align-items-center gap-10 text-white">
+                  <Link to="/Whistle" className="d-flex align-items-center gap-10 color-white">
                     <img src="/Assets/images/wishlist.svg" alt="wishlist" />
                     <p>
                       Favorite <br /> Wishlist
@@ -65,7 +65,7 @@ const Header = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link className="d-flex align-items-center gap-10 text-white">
+                  <Link className="d-flex align-items-center gap-10 color-white">
                     <img src="/Assets/images/user.svg" alt="user" />
                     <p>
                       Login <br /> My Account
@@ -73,7 +73,7 @@ const Header = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link className="d-flex align-items-center gap-10 text-white">
+                  <Link className="d-flex align-items-center gap-10 color-white">
                     <img src="/Assets/images/cart.svg" alt="cart" />
                     <div className="d-flex flex-column gap-10">
                       <span className="badge bg-white text-dark "> 0 </span>
@@ -93,7 +93,7 @@ const Header = () => {
             <div className="col-12">
               <div className="menu-bottom">
                 <div>
-                  <div class="dropdown">
+                  <div className="dropdown">
                     <button
                       className="btn btn-secondary dropdown-toggle bg-transparent "
                       type="button"
@@ -111,18 +111,18 @@ const Header = () => {
                       aria-labelledby="dropdownMenuButton1"
                     >
                       <li>
-                        <Link className="dropdown-item text-white" to="/">
-                          Action
+                        <Link className="dropdown-item color-white" to="/">
+                          Electionics
                         </Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item text-white" to="/">
-                          Another action
+                        <Link className="dropdown-item color-white" to="/">
+                          TV & Home Entertainment
                         </Link>
                       </li>
                       <li>
-                        <Link className="dropdown-item text-white" to="/">
-                          Something else here
+                        <Link className="dropdown-item color-white" to="/">
+                          Mobile & Accessories
                         </Link>
                       </li>
                     </ul>
@@ -131,9 +131,9 @@ const Header = () => {
                 <div className="menu-links">
                   <div className="d-flex align-items-center gap-15">
                     <NavLink to="/"> Home </NavLink>
-                    <NavLink to="/"> Our Store </NavLink>
-                    <NavLink to="/"> Blogs </NavLink>
-                    <NavLink to="/contact"> Contact </NavLink>
+                    <NavLink to="/store"> Our Store </NavLink>
+                    <NavLink to="/blogs"> Blogs </NavLink>
+                    <NavLink to="/contacts"> Contact </NavLink>
                   </div>
                 </div>
               </div>

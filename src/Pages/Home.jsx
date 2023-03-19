@@ -220,6 +220,59 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Famous Wrapper */}
+      <section className="famous-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-3 ">
+              <div className="famous-card bg-black position-relative">
+                <img src="https://www.pngplay.com/wp-content/uploads/15/iPhone-14-Transparent-Image.png"
+                  className="img-fluid bg-black" alt="famous" />
+                <div className="famous-content position-absolute">
+                  <h5> Smart Phone</h5>
+                  <h6> Smart Phone 14 Pro </h6>
+                  <p> From 2500  0r 250/mo. for 10 mon</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-3 ">
+              <div className="famous-card  position-relative">
+                <img src="https://www.pngmart.com/files/Android-TV-Download-PNG-Image.png"
+                  className="img-fluid mt-40" alt="famous" />
+                <div className="famous-content position-absolute">
+                  <h5 className="text-black"> Studio Display </h5>
+                  <h6 className="text-black"> 600 nits of Brightness </h6>
+                  <p className="text-black"> 27-inch 5K Retna display  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-3 ">
+              <div className="famous-card  position-relative">
+                <img src="http://cdn.shopify.com/s/files/1/0137/0292/2286/products/1.png?v=1638005392"
+                  className="img-fluid " alt="famous" />
+                <div className="famous-content position-absolute">
+                  <h5 className="text-black"> Big Screen</h5>
+                  <h6 className="text-black"> Smart Watch Series 7 </h6>
+                  <p className="text-black"> From 2500  0r 250/mo. for 10 mon</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-3 ">
+              <div className="famous-card  position-relative">
+                <img src="https://cdn.shopify.com/s/files/1/0075/7753/4528/products/dxvf_d849b77f-ac96-4866-b9e4-958a220f8d5d_580x.jpg?v=1608294639"
+                  className="img-fluid " alt="famous" />
+                <div className="famous-content position-absolute">
+                  <h5 className="text-black"> Home Speaker </h5>
+                  <h6 className="text-black"> Room-filling sound </h6>
+                  <p className="text-black"> From 2500  0r 250/mo. for 10 mon</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
       {/* Special Product */}
 
       <section className="special-wrapper py-5 home-wrapper-2">
@@ -232,7 +285,25 @@ const Home = () => {
               <SpecialProduct />
               <SpecialProduct />
               <SpecialProduct />
+              <SpecialProduct />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Popular Product  */}
+      <section className="popular-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="section-heading"> Our Popular Product </h3>
+            </div>
+          </div>
+          <div className="row">
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
           </div>
         </div>
 
