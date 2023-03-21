@@ -354,9 +354,6 @@ const Home = () => {
               </h3>
             </div>
             <BlogCards />
-            <BlogCards />
-            <BlogCards />
-            <BlogCards />
           </div>
         </div>
       </section>

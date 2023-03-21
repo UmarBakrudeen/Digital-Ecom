@@ -55,6 +55,13 @@ footer {
       width: 100%;
       display: flex;
       justify-content: space-between;
+      @include for-phone-only {
+        // flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        gap: 20px;
+      }
       h3 {
         color: $color-white;
         padding-bottom: 1.8rem;
@@ -94,5 +101,9 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include for-phone-only {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 }
