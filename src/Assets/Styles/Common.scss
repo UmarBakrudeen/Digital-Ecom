@@ -98,7 +98,7 @@
 .color-white {
   color: $color-white;
   @include for-phone-only {
-    color: red;
+    // color: red;
   }
 }
 

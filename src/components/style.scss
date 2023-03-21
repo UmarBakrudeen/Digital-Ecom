@@ -66,20 +66,6 @@
 }
 // Header End
 
-// Footer Start
-footer {
-  background-color: $dark-blue;
-  .input-group-text {
-    background-color: $dark-blue;
-    color: $color-white;
-    padding: 8px 17px;
-  }
-}
-footer:not(:first-child) {
-  border-top: 1px solid $color-white;
-}
-// Footer End
-
 // Home Start
 .main-banner-content {
   top: 15%;
