@@ -97,7 +97,7 @@ const Footer = () => {
                 <div className="container-xxl">
                     <div className="footer__copy">
                         <p className="text-center mb-0 color-white">
-                            &copy; {new Date().getFullYear()}: Powered by Black code
+                            &copy; {new Date().getFullYear()}; Powered by <a href="/"> Black code </a>
                         </p>
                         <p className="text-center mb-0 color-white">
                             Developed and maintained by ThalaiavUmar &#128293;

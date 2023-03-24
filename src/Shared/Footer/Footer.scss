@@ -9,6 +9,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include for-phone-only {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
     .left {
       width: 100%;
       .left__items {
@@ -17,6 +22,20 @@ footer {
         align-items: center;
         gap: 30px;
         color: $color-white;
+        img {
+          @include for-phone-only {
+            width: 18px;
+          }
+        }
+        h2 {
+          @include for-phone-only {
+            font-size: 17px;
+          }
+        }
+        @include for-phone-only {
+          gap: 10px;
+          justify-content: center;
+        }
       }
     }
     .right {
@@ -28,11 +47,17 @@ footer {
       padding: 0 20px;
       background-color: $color-white;
       border-radius: 5px;
+      @include for-phone-only {
+        // width: 100%;
+      }
       input {
         border: none;
         outline: none;
         height: 100%;
         width: 100%;
+        @include for-phone-only {
+          // width: 100%;
+        }
       }
       .btn-send {
         position: absolute;
@@ -45,6 +70,11 @@ footer {
         height: 38px;
         border-radius: 4px;
         font-size: 14px;
+        @include for-phone-only {
+          padding: 0 10px;
+          height: 30px;
+          font-size: 10px;
+        }
       }
     }
   }
@@ -101,9 +131,19 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    p {
+      color: $color-white;
+      a {
+        color: $color-white;
+        font-weight: 500;
+      }
+      @include for-phone-only {
+        font-size: 14px;
+      }
+    }
     @include for-phone-only {
       flex-direction: column;
-      gap: 10px;
+      gap: 15px;
     }
   }
 }

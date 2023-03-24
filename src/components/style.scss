@@ -1,11 +1,7 @@
-@import "../Styles/mixins.scss";
-@import "../Styles/variables.scss";
-
+@import "../Styles/mixins";
+@import "../Styles/_variables";
 // Header Start
-.header-top-strip {
-  background-color: $dark-bg;
-  border-bottom: 1px solid $dark-bg;
-}
+
 .header-upper {
   background-color: $dark-bg;
   .form-control:focus {
@@ -214,12 +210,21 @@
     h5 {
       font-size: 18px;
       color: $dark-bg;
+      padding: 5px 0;
+      @include for-phone-only {
+        font-size: 12px;
+        font-weight: bold;
+      }
     }
     p.desc {
       font-size: 13px;
       line-height: 22px;
       color: #777;
       padding: 20px 0;
+      @include for-phone-only {
+        font-size: 12px;
+        text-align: left;
+      }
     }
   }
 }
@@ -233,6 +238,21 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    p {
+      font-size: 14px;
+    }
+    @include for-phone-only {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .btn-readmore {
+      @include for-phone-only {
+        font-size: 13px;
+        color: $color-orange;
+        padding: 4px;
+        border-radius: 5px;
+        border: 1px solid $color-orange;
+      }
+    }
   }
 }
 

@@ -7,28 +7,28 @@ const BlogData = [
         img: "Assets/images/blog-1.jpg",
         date: '1 March, 2023',
         title: 'A beautiful sunday morning renaissance ',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor '
     },
     {
         id: 2,
         img: "Assets/images/blog-1.jpg",
         date: '1 March, 2023',
         title: 'A beautiful sunday morning renaissance ',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor '
     },
     {
         id: 3,
         img: "Assets/images/blog-1.jpg",
         date: '1 March, 2023',
         title: 'A beautiful sunday morning renaissance ',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor '
     },
     {
         id: 4,
         img: "Assets/images/blog-1.jpg",
         date: '1 March, 2023',
         title: 'A beautiful sunday morning renaissance ',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor '
     }
 ]
 
@@ -47,7 +47,7 @@ const BlogCards = () => {
                                     <p className="date"> {data.date} </p>
                                     <h5 className="title"> {data.title} </h5>
                                     <p className="desc"> {data.content} </p>
-                                    <Link to="/" className='button'>
+                                    <Link to="/" className='btn-readmore'>
                                         Read More
                                     </Link>
                                 </div>

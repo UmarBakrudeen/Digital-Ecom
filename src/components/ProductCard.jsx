@@ -52,7 +52,7 @@ const ProductCard = (props) => {
                     </div>
                 </Link>
             </div>
-            <div className={`${location.pathname === "/store" ? `gr-${grid}` : "col-3"}`}>
+            {/* <div className={`${location.pathname === "/store" ? `gr-${grid}` : "col-3"}`}>
                 <Link className="product-card">
                     <div className="wishlist-icon">
                         <Link>
@@ -95,7 +95,7 @@ const ProductCard = (props) => {
                         </div>
                     </div>
                 </Link>
-            </div>
+            </div> */}
         </Fragment >
     )
 }
