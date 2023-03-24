@@ -1,15 +1,15 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import Marque from 'react-fast-marquee';
 import BlogCards from "../components/BlogCards";
-import ProductCard from "../components/ProductCard";
-import SpecialProduct from "../components/SpecialProduct";
+// import ProductCard from "../components/ProductCard";
+// import SpecialProduct from "../components/SpecialProduct";
 
 const Home = () => {
   return (
     <Fragment>
-      <section className="home-wrapper-1 py-5">
+      {/* <section className="home-wrapper-1 py-5">
         <div className="container-xxl">
           <div className="row">
             <div className="col-6">
@@ -87,9 +87,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="home-wrapper-2 py-5">
+      {/* <section className="home-wrapper-2 py-5">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
@@ -133,9 +133,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="home-wrapper-3 py-5">
+      {/* <section className="home-wrapper-3 py-5">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
@@ -200,11 +200,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Feature Product */}
 
-      <section className="featured-wrapper py-5 home-wrapper-2">
+      {/* <section className="featured-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
@@ -218,10 +218,10 @@ const Home = () => {
             <ProductCard />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Famous Wrapper */}
-      <section className="famous-wrapper py-5 home-wrapper-2">
+      {/* <section className="famous-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-3 ">
@@ -271,11 +271,11 @@ const Home = () => {
           </div>
         </div>
 
-      </section>
+      </section> */}
 
       {/* Special Product */}
 
-      <section className="special-wrapper py-5 home-wrapper-2">
+      {/* <section className="special-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
@@ -289,10 +289,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Popular Product  */}
-      <section className="popular-wrapper py-5 home-wrapper-2">
+      {/* <section className="popular-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
@@ -306,8 +306,7 @@ const Home = () => {
             <ProductCard />
           </div>
         </div>
-
-      </section>
+      </section> */}
 
       <section className="marque-wrapper py-5">
         <div className="container-xxl">
