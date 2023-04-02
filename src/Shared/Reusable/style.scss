@@ -1,0 +1,22 @@
+@import "../../Styles/mixins";
+@import "../../Styles/variables";
+
+.form__container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+  label {
+    margin-bottom: 3px;
+  }
+  input {
+    height: 46px;
+    padding: 0 20px;
+    color: $dark-blue;
+    &:focus {
+      box-shadow: none;
+      border: 1px solid #f49030;
+    }
+  }
+}

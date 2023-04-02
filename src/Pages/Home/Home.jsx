@@ -2,17 +2,21 @@ import React, { Fragment } from "react";
 // import { Link } from "react-router-dom";
 
 import Marque from 'react-fast-marquee';
-import BlogCards from "../components/BlogCards";
-// import ProductCard from "../components/ProductCard";
+import BlogCards from "../../components/BlogCards";
+import Slider from "../Slider";
+import ProductCard from "../../components/ProductCard";
 // import SpecialProduct from "../components/SpecialProduct";
 
-const Home = () => {
+const Home = ({ cart, setCart }) => {
   return (
     <Fragment>
-      {/* <section className="home-wrapper-1 py-5">
+
+      <Slider />
+
+      <section className="home-wrapper-1 py-5">
         <div className="container-xxl">
-          <div className="row">
-            <div className="col-6">
+          <div className="header__add__content">
+            <div className="left__ad">
               <div className="main-banner position-relative p-3">
                 <img
                   src="/Assets/images/main-banner-1.jpg"
@@ -23,12 +27,11 @@ const Home = () => {
                   <h4> SUPERCHARGED FOR PROS. </h4>
                   <h5> iPad S13+ Pro. </h5>
                   <p> </p>
-                  <Link className="button"> BUY NOW </Link>
                 </div>
               </div>
             </div>
-            <div className="col-6">
-              <div className="d-flex flex-wrap justify-content-between align-items-center">
+            <div className="left__ad">
+              <div className="right__ads">
                 <div className="small-banner position-relative p-3">
                   <img
                     src="/Assets/images/catbanner-01.jpg"
@@ -87,42 +90,42 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {/* <section className="home-wrapper-2 py-5">
+      <section className="home-wrapper-2 py-5">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
-              <div className="services d-flex align-items-center justify-content-between">
-                <div className="d-flex align-items-center gap-15">
+              <div className="services ">
+                <div className="services__items">
                   <img src="/Assets/images/service.png" alt="Services" />
                   <div>
                     <h6> Free Shipping </h6>
                     <p> From all order over 700 </p>
                   </div>
                 </div>
-                <div className="d-flex align-items-center gap-15">
+                <div className="services__items">
                   <img src="/Assets/images/service-02.png" alt="Services" />
                   <div>
                     <h6> Daily Surprise Offers </h6>
                     <p> Save upto 25% off </p>
                   </div>
                 </div>
-                <div className="d-flex align-items-center gap-15">
+                <div className="services__items">
                   <img src="/Assets/images/service-03.png" alt="Services" />
                   <div>
                     <h6> Support </h6>
                     <p> Shop with an export </p>
                   </div>
                 </div>
-                <div className="d-flex align-items-center gap-15">
+                <div className="services__items">
                   <img src="/Assets/images/service-04.png" alt="Services" />
                   <div>
                     <h6> Affordable Prices </h6>
                     <p> Get Factory Default Price </p>
                   </div>
                 </div>
-                <div className="d-flex align-items-center gap-15">
+                <div className="services__items">
                   <img src="/Assets/images/service-05.png" alt="Services" />
                   <div>
                     <h6> Secure Payments </h6>
@@ -133,63 +136,63 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {/* <section className="home-wrapper-3 py-5">
+      <section className="home-wrapper-3 py-5">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
               <div className="categories">
-                <div className="d-flex gap-30 align-items-center">
+                <div className="category__items">
                   <div>
                     <h6> Music & Gaming </h6>
                     <p> 10 Items </p>
                   </div>
                   <img src="Assets/images/camera.jpg" alt="" />
                 </div>
-                <div className="d-flex gap-30 align-items-center">
+                <div className="category__items">
                   <div>
                     <h6> Smart Tv </h6>
                     <p> 10 Items </p>
                   </div>
                   <img src="Assets/images/tv.jpg" alt="" />
                 </div>
-                <div className="d-flex gap-30 align-items-center">
+                <div className="category__items">
                   <div>
                     <h6> Smart Watches </h6>
                     <p> 10 Items </p>
                   </div>
                   <img src="Assets/images/headphone.jpg" alt="headphone" />
                 </div>
-                <div className="d-flex gap-30 align-items-center">
+                <div className="category__items">
                   <div>
                     <h6> Cameras </h6>
                     <p> 10 Items </p>
                   </div>
                   <img src="Assets/images/camera.jpg" alt="" />
                 </div>
-                <div className="d-flex gap-30 align-items-center">
+                <div className="category__items">
                   <div>
                     <h6> Music & Gaming </h6>
                     <p> 10 Items </p>
                   </div>
                   <img src="Assets/images/camera.jpg" alt="" />
                 </div>
-                <div className="d-flex gap-30 align-items-center">
+                <div className="category__items">
                   <div>
                     <h6> Smart Tv </h6>
                     <p> 10 Items </p>
                   </div>
                   <img src="Assets/images/tv.jpg" alt="" />
                 </div>
-                <div className="d-flex gap-30 align-items-center">
+                <div className="category__items">
                   <div>
                     <h6> Smart Watches </h6>
                     <p> 10 Items </p>
                   </div>
                   <img src="Assets/images/headphone.jpg" alt="headphone" />
                 </div>
-                <div className="d-flex gap-30 align-items-center">
+                <div className="category__items">
                   <div>
                     <h6> Cameras </h6>
                     <p> 10 Items </p>
@@ -200,11 +203,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Feature Product */}
 
-      {/* <section className="featured-wrapper py-5 home-wrapper-2">
+      <section className="featured-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
@@ -212,13 +215,12 @@ const Home = () => {
                 Featured Collection
               </h3>
             </div>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <div className="product__content">
+              <ProductCard cart={cart} setCart={setCart} />
+            </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Famous Wrapper */}
       {/* <section className="famous-wrapper py-5 home-wrapper-2">

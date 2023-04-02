@@ -55,6 +55,12 @@ header {
     a {
       color: $color-white;
     }
+    img {
+      width: 200px;
+      // height: 57px;
+      // object-fit: cover;
+      margin-right: 25px;
+    }
   }
   .search__container {
     width: 45%;
@@ -133,6 +139,29 @@ header {
   display: none;
   @include for-phone-only {
     display: inline-block;
+    width: 100%;
+    overflow: hidden;
+  }
+  .header__small__content {
+    width: 100%;
+
+    .hs__lists {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      width: 100%;
+      overflow-x: scroll;
+      margin: 10px 0;
+      padding-right: 20px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .hs__items {
+        img {
+          width: 69px;
+        }
+      }
+    }
   }
 }
 
@@ -148,12 +177,15 @@ header {
     background-color: $dark-bg;
   }
   .search__content {
+    width: 70%;
+    margin: 0px auto;
     background-color: $color-white;
+    border-radius: 5px;
     input {
       border: none;
       outline: none;
       height: 40px;
-      border-radius: 4px;
+      font-size: 11px;
       background-color: transparent;
       padding-left: 15px;
     }
@@ -207,7 +239,7 @@ header {
 .isOpenmenu {
   .bars {
     position: fixed;
-    top: 20px;
+    top: 22px;
 
     &::before {
       transform: translateY(6px) rotate(-135deg);
@@ -227,8 +259,8 @@ header {
 
 .megamenu__container {
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
+  overflow: scroll;
   background-color: $color-white;
   position: fixed;
   top: 0;
@@ -243,14 +275,15 @@ header {
   .megamenu__content {
     width: 100%;
     height: 100%;
-    // padding: 70px 50px;
+    position: relative;
     .mm__header {
       width: 100%;
-      height: 120px;
-      background-color: gray;
+      background-color: $dark-bg;
       display: flex;
       position: relative;
       align-items: center;
+      position: fixed;
+      top: 0;
       .logo {
         position: absolute;
         right: 20px;
@@ -260,15 +293,41 @@ header {
         font-size: 1.5rem;
       }
       .left {
-        width: 80%;
-        margin: 0px auto;
+        width: 85%;
+        margin: 1rem auto;
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         gap: 20px;
-        margin-top: 3rem;
+        padding-top: 3px;
         img {
           width: 55px;
           border-radius: 50%;
           object-fit: contain;
+        }
+        h3 {
+          color: $color-white;
+          font-size: 19px;
+          padding-left: 26px;
+          span {
+            color: $light-bg;
+            margin-left: 10px;
+            font-weight: bold;
+          }
+        }
+        .account {
+          // width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border: 1px solid $light-bg;
+          border-radius: 20px;
+          color: $color-white;
+          padding: 3px 10px;
+          font-size: 14px;
+        }
+        .icon__account {
+          // font-size: 1rem;
         }
         .details {
           .name {
@@ -278,36 +337,79 @@ header {
       }
     }
     .mm__wrapper {
-      width: 70%;
-      margin: 60px auto;
-      height: 60%;
+      width: 100%;
+      height: 100%;
+      margin-top: 60px;
       .mm__lists {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        padding: 20px 25px;
+
+        h5 {
+          font-weight: bold;
+          font-size: 14px;
+          padding: 15px 0;
+        }
+
         .mm__items {
           display: flex;
           align-items: center;
+          border-bottom: 1px solid $light-bg;
           gap: 10px;
+          padding: 12px 0;
           svg {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
           }
           span {
-            font-size: 1.1rem;
+            font-size: 14px;
           }
         }
       }
     }
     .mm__logout {
-      width: 70%;
-      margin: 0px auto;
-      .mm__items {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        font-size: 1.5rem;
+      width: 100%;
+      background-color: $light-bg;
+      padding: 0 20px;
+      h5 {
         font-weight: bold;
-        color: $color-primary;
+        font-size: 14px;
+        padding: 15px 0;
+      }
+      .images {
+        display: flex;
+        gap: 10px;
+        margin-top: 13px;
+        img {
+          height: 44px;
+          object-fit: contain;
+        }
+      }
+      .footer {
+        h6 {
+          padding-bottom: 20px;
+          font-size: 1.4rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          color: $dark-bg;
+        }
+        p {
+          padding-bottom: 15px;
+          font-size: 14px;
+          a {
+            margin-left: 7px;
+            color: $dark-blue;
+            font-weight: bold;
+          }
+        }
+        .info-section {
+          padding-bottom: 45px;
+          font-size: 14px;
+          a {
+            margin-left: 7px;
+            color: $dark-blue;
+            font-weight: bold;
+          }
+        }
       }
     }
   }

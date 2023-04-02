@@ -5,15 +5,18 @@ import classNames from "classnames";
 import './Header.scss';
 
 // Icons
-import { BsSearch, BsFillCartPlusFill } from "react-icons/bs";
-import { BiSupport } from "react-icons/bi";
-import { CiHome, CiShoppingCart, CiHeart, CiUser } from "react-icons/ci";
-import { IoCogOutline } from "react-icons/io5";
-import { VscSignOut } from "react-icons/vsc";
+import { BsSearch } from "react-icons/bs";
+import { BiUserCircle, BiCategory } from "react-icons/bi";
+import { RiCoupon2Line } from "react-icons/ri";
+import { CiHome, CiShoppingCart, CiCircleList, CiHeart, CiDiscount1, CiGift, CiCircleQuestion, CiBookmark, CiCircleInfo } from "react-icons/ci";
+import { IoReorderTwoOutline, IoWalletOutline } from "react-icons/io5";
+import { TbUsers } from "react-icons/tb";
+import { IoMdCall } from "react-icons/io";
 
 
 
-const Header = () => {
+const Header = ({ cart, setCart }) => {
+    const name = "Umar";
 
     const [isOpenmenu, setIsOpenmenu] = useState(false);
 
@@ -35,14 +38,13 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="search__content">
-                    <input type="text" />
+                    <input type="text" placeholder="Search digi products.." />
                     <BsSearch className="icon" />
                 </div>
                 <div className="cart__content">
-                    <BsFillCartPlusFill className="icon__cart" />
-                    <span className="cart__count">0</span>
+                    <CiShoppingCart className="icon__cart" />
+                    <span className="cart__count">{ }</span>
                 </div>
-
             </div>
 
             <header className="header-top-strip">
@@ -58,9 +60,14 @@ const Header = () => {
                 <div className="container-xxl">
                     <div className="header__second">
                         <Link to="/" className="logo">
-                            <h2>
-                                <Link className=""> Digi World </Link>
-                            </h2>
+                            {/* <h2>
+                                <Link className="" to="/"> Digi World </Link>
+                            </h2> */}
+
+                            <img src="https://imgs.search.brave.com/LSUH0ky-RPdSNPzkj4DAgfpBDzObtY5qrAdMEfYHEyw/rs:fit:461:86:1/g:ce/aHR0cHM6Ly90aW12/aWVjMzY1LnZuL3Bp/Y3R1cmVzLzIwMTcv/MTAvMTIvY3NzMTUw/NzgwMjIzMi5qcGc"
+                                alt="Logo"
+                                className="img-fluid"
+                            />
                         </Link>
                         <div className="search__container">
                             <div className="dropdown">
@@ -123,7 +130,7 @@ const Header = () => {
                             </div>
                             <div className="right__items">
                                 <div>
-                                    <Link to="/">
+                                    <Link to="/login">
                                         <img src="/Assets/images/user.svg" alt="user" />
                                         <p>
                                             Login <br /> My Account
@@ -148,7 +155,34 @@ const Header = () => {
             </header>
 
             <div className="header__slider">
-                one
+                <div className="header__small__content">
+                    <div className="hs__lists">
+                        <div className="hs__items">
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1679501246_Mobiles__PC.jpg" alt="mobile" />
+                        </div>
+                        <div className="hs__items">
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1679501223_TV__Audio.jpg" alt="mobile" />
+                        </div>
+                        <div className="hs__items">
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1679501094_Appliances.jpg" alt="mobile" />
+                        </div>
+                        <div className="hs__items">
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1667193478_Top-Icons--fashion.jpg" alt="mobile" />
+                        </div>
+                        <div className="hs__items">
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1679321261_TopIcons_Kitchenware.jpg" alt="mobile" />
+                        </div>
+                        <div className="hs__items">
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1668513461_Top-Icons_Home--Lifestyle.jpg" alt="mobile" />
+                        </div>
+                        <div className="hs__items">
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1675187977_Beauty.jpg" alt="mobile" />
+                        </div>
+                        <div className="hs__items">
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1678460136_TopIcons_Travelsports.jpg" alt="mobile" />
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {/* Open Menu Content */}
@@ -156,14 +190,16 @@ const Header = () => {
                 <div className="megamenu__container">
                     <div className="megamenu__content">
                         <div className="mm__header">
-                            <div className="logo">
+                            {/* <div className="logo">
                                 LOGO
-                            </div>
+                            </div> */}
                             <div className="left">
-                                <img src="https://pbs.twimg.com/profile_images/1220597371479838720/OBrqoKSO_400x400.jpg" alt="" />
-                                <div className="details">
-                                    <div className="name"> Umar Farook </div>
-                                </div>
+                                {/* <img src="https://pbs.twimg.com/profile_images/1220597371479838720/OBrqoKSO_400x400.jpg" alt="" /> */}
+                                <h3> Hello,  <span> {name}... </span> </h3>
+                                <Link to="/login" className="account">
+                                    <BiUserCircle className="icon__account" />
+                                    <span> Sign In </span>
+                                </Link>
                             </div>
                         </div>
                         <div className="mm__wrapper">
@@ -173,34 +209,91 @@ const Header = () => {
                                     <span> Home </span>
                                 </div>
                                 <div className="mm__items">
-                                    <CiShoppingCart />
-                                    <span> Cart </span>
+                                    <BiCategory />
+                                    <span> Shop By Category </span>
+                                </div>
+
+                                <h5> My Accounts </h5>
+                                <div className="mm__items">
+                                    <IoReorderTwoOutline />
+                                    <span> My Orders  </span>
+                                </div>
+                                <div className="mm__items">
+                                    <CiCircleList />
+                                    <span> My List </span>
                                 </div>
                                 <div className="mm__items">
                                     <CiHeart />
-                                    <span> Favorite </span>
+                                    <span> Wishlist </span>
                                 </div>
                                 <div className="mm__items">
-                                    <CiUser />
-                                    <span> Accounts </span>
+                                    <IoWalletOutline />
+                                    <span> Wallet </span>
                                 </div>
-                                <div className="mm__items">
-                                    <BiSupport />
-                                    <span> Customer Support </span>
-                                </div>
-                                <div className="mm__items">
+                                {/* <div className="mm__items">
                                     <IoCogOutline />
                                     <span> Setting </span>
+                                </div> */}
+                                <h5> Offers & More </h5>
+                                <div className="mm__items">
+                                    <RiCoupon2Line />
+                                    <span> Offer Store </span>
+                                </div>
+                                <div className="mm__items">
+                                    <CiDiscount1 />
+                                    <span> Coupon Store </span>
+                                </div>
+                                <div className="mm__items">
+                                    <CiGift />
+                                    <span> Gift Store </span>
+                                </div>
+                                <h5> Help & Support </h5>
+                                <div className="mm__items">
+                                    <CiCircleQuestion />
+                                    <span> FAQs/Need Help </span>
+                                </div>
+                                <div className="mm__items">
+                                    <TbUsers />
+                                    <span> About Us </span>
+                                </div>
+                                <div className="mm__items">
+                                    <IoMdCall />
+                                    <span> Contact Us </span>
+                                </div>
+                                <div className="mm__items">
+                                    <CiBookmark />
+                                    <span> Guide </span>
+                                </div>
+                                <div className="mm__items">
+                                    <CiCircleInfo />
+                                    <span> Caution Notice </span>
+                                </div>
+
+                            </div>
+                            <div className="mm__logout">
+                                <h5>Download the App</h5>
+                                <div className="images">
+                                    <img src="https://gomonad.com/images/btn-g.e6fd788e1f93d173dffdb759081cf06c.png" alt="" />
+                                    <img src="https://gomonad.com/images/btn-i.2928803a8e87fbab2e101bc38aa1a758.png" alt="" />
+                                </div>
+                                <hr />
+                                <div className="footer">
+                                    <div className="logo">
+                                        <h6> Digi World </h6>
+                                        <p> Please note that you are accessing the BETA Version of
+                                            <a href="/">
+                                                digiworld.com
+                                            </a> </p>
+                                        <div className="info-section"> Should you encounter any bugs, glitches, lack of functionality, delayed deliveries, billing errors or other problems on the beta website, please email us on
+                                            <a href="mailto:thalaivaumar9501.s@gmail.com">
+                                                developing@digiworld.com
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="mm__logout">
-                            <div className="mm__items">
-                                <VscSignOut />
-                                <span> Sign Out </span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             ) : null}
