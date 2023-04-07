@@ -11,8 +11,8 @@ const images = [
     'Assets/images/camera.jpg'
 ]
 
-
-const SingleProduct = () => {
+const SingleProduct = (ProductData) => {
+    console.log("ProductData", ProductData)
     const [img, setImg] = useState(images[0])
 
     const hoverHandle = (images) => {

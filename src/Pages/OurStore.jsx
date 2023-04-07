@@ -209,8 +209,8 @@ const OurStore = () => {
                                         <div className="d-flex gap-10 align-items-center">
                                             <img onClick={() => setGrid(3)} src="Assets/images/gr4.svg" className='d-block img-fluid' alt="" />
                                             <img onClick={() => setGrid(4)} src="Assets/images/gr3.svg" className='d-block img-fluid' alt="" />
-                                            <img onClick={() => setGrid(6)} src="Assets/images/gr2.svg" className='d-block img-fluid' alt="" />
-                                            <img onClick={() => setGrid(12)} src="Assets/images/gr.svg" className='d-block img-fluid' alt="" />
+                                            {/* <img onClick={() => setGrid(6)} src="Assets/images/gr2.svg" className='d-block img-fluid' alt="" />
+                                            <img onClick={() => setGrid(12)} src="Assets/images/gr.svg" className='d-block img-fluid' alt="" /> */}
                                         </div>
 
                                     </div>

@@ -1,28 +1,36 @@
 import React, { Fragment, useState } from "react";
 import "./Login.scss";
 
-// import LoginImg from "../../Assets/Images/login.jpg";
-// import Input from "../Reusable/Input";
-// import Button from "../Reusable/Button";
-
 import { Link } from "react-router-dom";
 import Input from "../../Shared/Reusable/Input";
 
 function SignUp() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const [showPassword, setShowPassword] = useState(false);
+
+  const RegisterUser = (e) => {
+    e.preventDefault();
+    console.log(name, email, password);
+  };
 
   return (
     <Fragment>
       <div className="login__container">
         <div className="login__content">
           <div className="login__wrapper">
-            <div className="left">
+            <form className="left" onSubmit={RegisterUser}>
               <h3> Create an Account </h3>
               <p> Continue where you left off </p>
               <div className="field">
                 <Input
                   label="Full Name"
                   type="text"
+                  value={name}
+                  name="name"
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="Enter your full name"
                 />
                 <i className="bx bx-envelope"></i>
@@ -31,6 +39,9 @@ function SignUp() {
                 <Input
                   label="Email"
                   type="text"
+                  value={email}
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                 />
                 <i className="bx bx-envelope"></i>
@@ -40,6 +51,9 @@ function SignUp() {
                   label="Password"
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
+                  value={password}
+                  name="password"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <div onClick={() => setShowPassword(!showPassword)}>
                   {showPassword ? (
@@ -49,7 +63,9 @@ function SignUp() {
                   )}
                 </div>
               </div>
-              <button className="btn__signin">Sign Up </button>
+              <button type="submit" className="btn__signin">
+                Sign Up
+              </button>
               <div className="already__acc">
                 Already a user? <Link to="/login"> Sign In </Link>
               </div>
@@ -72,7 +88,7 @@ function SignUp() {
                   <div className="text"> Sign Up using Facebook </div>
                 </div>
               </div>
-            </div>
+            </form>
             <div className="right">
               <img
                 src="http://fleet.jan7tech.com/static/media/login.064e84ba5d94471ab675.jpg"

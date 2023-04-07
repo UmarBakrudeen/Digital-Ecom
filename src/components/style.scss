@@ -673,12 +673,19 @@
   display: flex;
   border-radius: 10px;
   gap: 30px;
+  @include for-phone-only {
+    flex-direction: column;
+  }
   .left__content {
     border-right: 2px solid #ddd;
     padding-right: 40px;
     width: 100%;
     display: flex;
     gap: 30px;
+    @include for-phone-only {
+      border: none;
+      padding: 0;
+    }
   }
   .img__wrap {
     img {
@@ -746,12 +753,18 @@
       align-items: center;
       justify-content: space-between;
       margin-top: 20px;
+      @include for-phone-only {
+        flex-direction: column;
+      }
       .add-cart {
         display: flex;
         align-items: center;
         gap: 10px;
         width: max-content;
         padding: 20px;
+        @include for-phone-only {
+          padding-left: 0;
+        }
         .btn-add {
           border: none;
           outline: none;

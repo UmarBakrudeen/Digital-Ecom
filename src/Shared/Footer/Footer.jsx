@@ -100,7 +100,7 @@ const Footer = () => {
                             &copy; {new Date().getFullYear()}; Powered by <a href="/"> Black code </a>
                         </p>
                         <p className="text-center mb-0 color-white">
-                            Developed and maintained by ThalaiavUmar &#128293;
+                            Developed and maintained by Thalaiva Umar &#128293;
                         </p>
 
                     </div>
