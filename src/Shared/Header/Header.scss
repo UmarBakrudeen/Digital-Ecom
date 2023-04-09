@@ -181,6 +181,13 @@ header {
     margin: 0px auto;
     background-color: $color-white;
     border-radius: 5px;
+    @include for-phone-only {
+      width: 60%;
+      margin: auto !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     input {
       border: none;
       outline: none;
@@ -357,6 +364,7 @@ header {
           border-bottom: 1px solid $light-bg;
           gap: 10px;
           padding: 12px 0;
+          color: $dark-bg !important;
           svg {
             font-size: 1.2rem;
           }

@@ -1,8 +1,13 @@
-import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import classNames from "classnames";
-
+import { toast } from "react-toastify";
 import './Header.scss';
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase/config";
+import { useDispatch } from "react-redux";
+import { SET_ACTIVE_USER, REMOVE_ACTIVE_USER } from "../../Redux/Slice/authSlice";
+
 
 // Icons
 import { BsSearch } from "react-icons/bs";
@@ -12,16 +17,51 @@ import { CiHome, CiShoppingCart, CiCircleList, CiHeart, CiDiscount1, CiGift, CiC
 import { IoReorderTwoOutline, IoWalletOutline } from "react-icons/io5";
 import { TbUsers } from "react-icons/tb";
 import { IoMdCall } from "react-icons/io";
+import ShowOnLogin, { ShowOnLogout } from "./HiddenLinks";
 
-
-
-const Header = ({ cart, setCart }) => {
-    const name = "Umar";
-
+const Header = () => {
     const [isOpenmenu, setIsOpenmenu] = useState(false);
+    const [displayName, setDisplayName] = useState('')
+    const navigate = useNavigate();
+
+    const dispatch = useDispatch()
 
     const OpenMenu = () => {
         setIsOpenmenu(!isOpenmenu)
+    }
+
+    // Monitor currently sign in User
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+
+                if (user.displayName === null) {
+                    const u1 = user.email.substring(0, user.email.indexOf("@"));
+                    const uName = u1.charAt(0).toUpperCase() + u1.slice(1)
+                    setDisplayName(uName)
+                } else {
+                    setDisplayName(user.displayName)
+                }
+                dispatch(SET_ACTIVE_USER({
+                    email: user.email,
+                    userName: user.displayName ? user.displayName : displayName,
+                    userID: user.uid
+                }))
+
+            } else {
+                setDisplayName("")
+                dispatch(REMOVE_ACTIVE_USER())
+            }
+        });
+    }, [dispatch, displayName])
+
+    const logoutUser = () => {
+        signOut(auth).then(() => {
+            toast.success("Logout Successfully...")
+            navigate("/");
+        }).catch((error) => {
+            toast.error(error.message)
+        });
     }
 
     return (
@@ -60,10 +100,6 @@ const Header = ({ cart, setCart }) => {
                 <div className="container-xxl">
                     <div className="header__second">
                         <Link to="/" className="logo">
-                            {/* <h2>
-                                <Link className="" to="/"> Digi World </Link>
-                            </h2> */}
-
                             <img src="https://imgs.search.brave.com/LSUH0ky-RPdSNPzkj4DAgfpBDzObtY5qrAdMEfYHEyw/rs:fit:461:86:1/g:ce/aHR0cHM6Ly90aW12/aWVjMzY1LnZuL3Bp/Y3R1cmVzLzIwMTcv/MTAvMTIvY3NzMTUw/NzgwMjIzMi5qcGc"
                                 alt="Logo"
                                 className="img-fluid"
@@ -78,7 +114,6 @@ const Header = ({ cart, setCart }) => {
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    {/* <img src="Assets/images/menu.svg" alt="" /> */}
                                     <span className="d-inline-block">
                                         All Categories
                                     </span>
@@ -128,16 +163,31 @@ const Header = ({ cart, setCart }) => {
                                     </Link>
                                 </div>
                             </div>
-                            <div className="right__items">
-                                <div>
-                                    <Link to="/login">
-                                        <img src="/Assets/images/user.svg" alt="user" />
-                                        <p>
-                                            Login <br /> My Account
-                                        </p>
-                                    </Link>
+                            <ShowOnLogout>
+                                <div className="right__items">
+                                    <div>
+                                        <Link to="/login">
+                                            <img src="/Assets/images/user.svg" alt="user" />
+                                            <p>
+                                                Login <br /> My Account
+                                            </p>
+                                        </Link>
+                                    </div>
                                 </div>
-                            </div>
+                            </ShowOnLogout>
+                            <ShowOnLogin>
+                                <div className="right__items">
+                                    <div>
+                                        <Link onClick={logoutUser}>
+                                            <img src="/Assets/images/user.svg" alt="user" />
+                                            <p>
+                                                Hii,&nbsp;{displayName} <br />
+                                                Logout
+                                            </p>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </ShowOnLogin>
                             <div className="right__items">
                                 <div>
                                     <Link to="/">
@@ -194,20 +244,27 @@ const Header = ({ cart, setCart }) => {
                                 LOGO
                             </div> */}
                             <div className="left">
-                                {/* <img src="https://pbs.twimg.com/profile_images/1220597371479838720/OBrqoKSO_400x400.jpg" alt="" /> */}
-                                <h3> Hello,  <span> {name}... </span> </h3>
-                                <Link to="/login" className="account">
-                                    <BiUserCircle className="icon__account" />
-                                    <span> Sign In </span>
-                                </Link>
+                                <h3> Hello,  <span> {displayName}... </span> </h3>
+                                <ShowOnLogout>
+                                    <a href="/login" className="account">
+                                        <BiUserCircle className="icon__account" />
+                                        <span> Sign In </span>
+                                    </a>
+                                </ShowOnLogout>
+                                <ShowOnLogin>
+                                    <a href="/login" className="account">
+                                        <BiUserCircle className="icon__account" />
+                                        <span> Logout </span>
+                                    </a>
+                                </ShowOnLogin>
                             </div>
                         </div>
                         <div className="mm__wrapper">
                             <div className="mm__lists">
-                                <div className="mm__items">
+                                <a href="/" className="mm__items">
                                     <CiHome />
                                     <span> Home </span>
-                                </div>
+                                </a >
                                 <div className="mm__items">
                                     <BiCategory />
                                     <span> Shop By Category </span>
@@ -297,7 +354,6 @@ const Header = ({ cart, setCart }) => {
                     </div>
                 </div>
             ) : null}
-
         </Fragment>
     );
 };

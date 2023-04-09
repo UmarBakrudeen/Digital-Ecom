@@ -1,23 +1,42 @@
 import React, { Fragment, useState } from "react";
 import "./Login.scss";
-
-import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../../Shared/Reusable/Input";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase/config";
+import Loading from "../../Shared/Loading/Loading";
 
 function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const RegisterUser = (e) => {
     e.preventDefault();
     console.log(name, email, password);
+
+    setLoading(true);
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        setLoading(false);
+        toast.success("Registration Successfully ");
+        navigate("/login");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+        setLoading(false);
+      });
   };
 
   return (
     <Fragment>
+      {loading && <Loading />}
       <div className="login__container">
         <div className="login__content">
           <div className="login__wrapper">
@@ -63,7 +82,11 @@ function SignUp() {
                   )}
                 </div>
               </div>
-              <button type="submit" className="btn__signin">
+              <button
+                type="submit"
+                onClick={RegisterUser}
+                className="btn__signin"
+              >
                 Sign Up
               </button>
               <div className="already__acc">

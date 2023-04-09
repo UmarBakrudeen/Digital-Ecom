@@ -320,9 +320,20 @@
 }
 .card__container {
   width: 24%;
+  min-width: 24%;
   align-items: center;
   display: flex;
   gap: 10px;
+  @include for-phone-only {
+    width: 48.5%;
+    display: flex;
+  }
+  a {
+    width: 100%;
+  }
+  #product-item {
+    width: 100%;
+  }
 }
 .product-card {
   width: 100%;

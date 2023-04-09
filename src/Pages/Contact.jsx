@@ -46,7 +46,7 @@ const Contact = () => {
                       <textarea
                         name=""
                         id=""
-                        style={{ height: "150px" }}
+                        // style={{ height: "150px" }}
                         cols="30"
                         rows="10"
                         className='w-100 form-control '

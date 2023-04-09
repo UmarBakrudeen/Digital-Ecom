@@ -1,107 +1,109 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import ReactStars from "react-rating-stars-component";
 import { Link, useLocation } from 'react-router-dom';
+import Loading from '../Shared/Loading/Loading';
 
-const ProductData = [
-    {
-        id: '1',
-        image: "Assets/images/watch.jpg",
-        hoverImg: "Assets/images/watch-1.png",
-        brand: "Hawels",
-        title: "Kids headphone bulk 10 pack multi colored for students",
-        price: "100"
-    },
-    {
-        id: '2',
-        image: "Assets/images/watch.jpg",
-        hoverImg: "Assets/images/watch-1.png",
-        brand: "Hawels",
-        title: "Kids headphone bulk 10 pack multi colored for students",
-        price: "200"
-    },
-    {
-        id: '3',
-        image: "Assets/images/watch.jpg",
-        hoverImg: "Assets/images/watch-1.png",
-        brand: "Hawels",
-        title: "Kids headphone bulk 10 pack multi colored for students",
-        price: "340"
-    },
-    {
-        id: '4',
-        image: "Assets/images/watch.jpg",
-        hoverImg: "Assets/images/watch-1.png",
-        brand: "Hawels",
-        title: "Kids headphone bulk 10 pack multi colored for students",
-        price: "340"
-    },
-    {
-        id: '5',
-        image: "Assets/images/watch.jpg",
-        hoverImg: "Assets/images/watch-1.png",
-        brand: "Hawels",
-        title: "Kids headphone bulk 10 pack multi colored for students",
-        price: "340"
-    },
-    {
-        id: '6',
-        image: "Assets/images/watch.jpg",
-        hoverImg: "Assets/images/watch-1.png",
-        brand: "Hawels",
-        title: "Kids headphone bulk 10 pack multi colored for students",
-        price: "340"
-    },
-    {
-        id: '7',
-        image: "Assets/images/watch.jpg",
-        hoverImg: "Assets/images/watch-1.png",
-        brand: "Hawels",
-        title: "Kids headphone bulk 10 pack multi colored for students",
-        price: "340"
-    },
-    {
-        id: '8',
-        image: "Assets/images/watch.jpg",
-        hoverImg: "Assets/images/watch-1.png",
-        brand: "Hawels",
-        title: "Kids headphone bulk 10 pack multi colored for students",
-        price: "340"
-    }
-]
+// const ProductData = [
+//     {
+//         id: '1',
+//         image: "Assets/images/watch.jpg",
+//         hoverImg: "Assets/images/watch-1.png",
+//         brand: "Hawels",
+//         title: "Kids headphone bulk 10 pack multi colored for students",
+//         price: "100"
+//     },
+//     {
+//         id: '2',
+//         image: "Assets/images/watch.jpg",
+//         hoverImg: "Assets/images/watch-1.png",
+//         brand: "Hawels",
+//         title: "Kids headphone bulk 10 pack multi colored for students",
+//         price: "200"
+//     },
+//     {
+//         id: '3',
+//         image: "Assets/images/watch.jpg",
+//         hoverImg: "Assets/images/watch-1.png",
+//         brand: "Hawels",
+//         title: "Kids headphone bulk 10 pack multi colored for students",
+//         price: "340"
+//     },
+//     {
+//         id: '4',
+//         image: "Assets/images/watch.jpg",
+//         hoverImg: "Assets/images/watch-1.png",
+//         brand: "Hawels",
+//         title: "Kids headphone bulk 10 pack multi colored for students",
+//         price: "340"
+//     },
+//     {
+//         id: '5',
+//         image: "Assets/images/watch.jpg",
+//         hoverImg: "Assets/images/watch-1.png",
+//         brand: "Hawels",
+//         title: "Kids headphone bulk 10 pack multi colored for students",
+//         price: "340"
+//     },
+//     {
+//         id: '6',
+//         image: "Assets/images/watch.jpg",
+//         hoverImg: "Assets/images/watch-1.png",
+//         brand: "Hawels",
+//         title: "Kids headphone bulk 10 pack multi colored for students",
+//         price: "340"
+//     },
+//     {
+//         id: '7',
+//         image: "Assets/images/watch.jpg",
+//         hoverImg: "Assets/images/watch-1.png",
+//         brand: "Hawels",
+//         title: "Kids headphone bulk 10 pack multi colored for students",
+//         price: "340"
+//     },
+//     {
+//         id: '8',
+//         image: "Assets/images/watch.jpg",
+//         hoverImg: "Assets/images/watch-1.png",
+//         brand: "Hawels",
+//         title: "Kids headphone bulk 10 pack multi colored for students",
+//         price: "340"
+//     }
+// ]
 
 const ProductCard = (props) => {
-    // const [data, setData] = useState([]);
-    // const [filter, setFilter] = useState(data);
-    // const [loading, setLoading] = useState(false);
-    // let componentMounted = true;
+    const [data, setData] = useState([]);
+    const [filter, setFilter] = useState(data);
+    const [loading, setLoading] = useState(false);
+    let componentMounted = true;
     const { grid } = props;
     let location = useLocation();
     console.log("Location::", location)
 
-    // useEffect(() => {
-    //     const getProduct = async () => {
-    //         setLoading(true);
-    //         const response = await fetch("https://64282d05161067a83b0898c5.mockapi.io/Products");
-    //         if (componentMounted) {
-    //             setData(await response.clone().json());
-    //             setFilter(await response.json());
-    //             setLoading(false);
-    //             console.log("filter::", filter);
-    //         }
-    //         return () => {
-    //             componentMounted = false;
-    //         };
-    //     };
-    //     getProduct();
-    // }, []);
+    useEffect(() => {
+        const getProduct = async () => {
+            setLoading(true);
+            const response = await fetch("https://64282d05161067a83b0898c5.mockapi.io/Products");
+            if (componentMounted) {
+                setData(await response.clone().json());
+                setFilter(await response.json());
+                setLoading(false);
+                console.log("filter::", filter);
+            }
+            return () => {
+                componentMounted = false;
+            };
+        };
+        getProduct();
+    }, []);
 
     return (
         <Fragment>
+            {loading && <Loading />}
             {
-                ProductData.map((product) => (
+                data.map((product) => (
                     <>
                         <div className="card__container">
-                            <div className={`${location.pathname === "/store" ? `gr-${grid}` : ""}`}>
+                            <div className={`${location.pathname === "/store" ? `gr-${grid}` : ""}`} id="product-item">
                                 <div className="product-card">
                                     <Link to={`/product/${product.id}`}>
                                         <div className="products">

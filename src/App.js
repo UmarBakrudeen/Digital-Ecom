@@ -6,6 +6,10 @@ import "./components/style.scss";
 import "./Assets/Styles/Home.scss";
 import "./Assets/Styles/Common.scss";
 
+// Toast Notifications
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // React Router Dom
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
@@ -20,6 +24,8 @@ import SingleProduct from "./Pages/SingleProduct";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Auth/Login";
 import SignUp from "./Pages/Auth/SignUp";
+import Cart from "./Pages/Cart/Cart";
+import Checkout from "./Pages/Checkout/Checkout";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -30,13 +36,16 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Layout />}>
             <Route index element={<Home cart={cart} setCart={setCart} />} />
+            <Route path="/product/:id" element={<SingleProduct />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/store" element={<OurStore />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/contacts" element={<Contact />} />
             <Route path="/whistle" element={<Whistle />} />
-            <Route path="/product/:id" element={<SingleProduct />} />
 
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/refund-policy" element={<RefundPolicy />} />
@@ -46,6 +55,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </Fragment>
   );
 }

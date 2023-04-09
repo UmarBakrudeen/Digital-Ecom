@@ -1,0 +1,17 @@
+@import "../../Styles/_mixins";
+@import "../../Styles/variables";
+
+.loading__container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 200px;
+    object-fit: contain;
+    @include for-phone-only {
+      height: 110px;
+    }
+  }
+}
