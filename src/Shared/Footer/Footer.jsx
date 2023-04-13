@@ -1,10 +1,23 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import './Footer.scss';
+import ReactGA from "react-ga";
 // Icons
 import { BsLinkedin, BsGithub, BsYoutube, BsInstagram } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
+
 const Footer = () => {
+    const [visitors, setVisitors] = useState(null)
+
+    useEffect(() => {
+        ReactGA.initialize('GA_MEASUREMENT_ID');
+        ReactGA.pageview(window.location.pathname + window.location.search);
+
+        ReactGA.ga((tracker) => {
+            setVisitors(tracker.get('visitors'));
+        });
+    }, []);
+
     return (
         <Fragment>
             <footer className="footer__header__section">
@@ -99,10 +112,10 @@ const Footer = () => {
                         <p className="text-center mb-0 color-white">
                             &copy; {new Date().getFullYear()}; Powered by <a href="/"> Black code </a>
                         </p>
+                        <p>Number of visitors: {visitors}</p>
                         <p className="text-center mb-0 color-white">
                             Developed and maintained by Thalaiva Umar &#128293;
                         </p>
-
                     </div>
                 </div>
             </footer>

@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import BreadCrump from '../components/Store/BreadCrump'
 import Meta from '../components/Store/Meta'
-
+import { ProductData } from '../Common/data';
 import ReactImageMagnify from 'react-image-magnify';
 
 const images = [
@@ -11,9 +11,16 @@ const images = [
     'Assets/images/camera.jpg'
 ]
 
-const SingleProduct = (ProductData) => {
-    console.log("ProductData", ProductData)
-    const [img, setImg] = useState(images[0])
+const SingleProduct = () => {
+    const [img, setImg] = useState(images[0]);
+    const [selectedProductId, setSelectedProductId] = useState(null);
+
+    const handleProductClick = (id) => {
+        setSelectedProductId(id);
+    }
+
+    const selectedProduct = ProductData.find(product => product.id === selectedProductId);
+
 
     const hoverHandle = (images) => {
         setImg(images)
@@ -59,7 +66,7 @@ const SingleProduct = (ProductData) => {
                             </div>
                         </div>
                         <div className="right__content">
-                            <div className="title"> Fujitsu UH-X 12th Gen Intel Evo Core i7 13.3 inch(33cm) FHD IPS 400Nits Thin & Light Laptop(16GB/512GB SSD/Windows11/Office/Iris Xe</div>
+                            {/* <div className="title"> Fujitsu UH-X 12th Gen Intel Evo Core i7 13.3 inch(33cm) FHD IPS 400Nits Thin & Light Laptop(16GB/512GB SSD/Windows11/Office/Iris Xe</div>
                             <div className="texts">
                                 <div className="brand">
                                     <div className="name"> Brand: </div>
@@ -82,7 +89,49 @@ const SingleProduct = (ProductData) => {
                             </div>
                             <div className="desc">
                                 <h5> Description </h5>
-                                Fujitsu UH-X 12th Gen Intel Evo Core i7 13.3 inch(33cm) FHD IPS 400Nits Thin & Light Laptop(16GB/512GB SSD/Windows11/Office/Iris Xe</div>
+                                Fujitsu UH-X 12th Gen Intel Evo Core i7 13.3 inch(33cm) FHD IPS 400Nits Thin & Light Laptop(16GB/512GB SSD/Windows11/Office/Iris Xe
+                                </div> */}
+                            {/* {ProductData.map((product) => (
+                                <>
+                                    <div className="title"> {product.title} </div>
+                                    <div className="texts">
+                                        <div className="brand">
+                                            <div className="name"> Brand: </div>
+                                            <div className="text"> Noise Fit </div>
+                                        </div>
+                                        <div className="brand">
+                                            <div className="name"> Condition: </div>
+                                            <div className="text"> New </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="footer">
+                                        <div className="price">  ₹1,990 </div>
+                                        <div className="add-cart">
+                                            <button className='btn-add'> - </button>
+                                            <span> 1 </span>
+                                            <button className='btn-add'> + </button>
+                                            <button className="btn-addcart"> Add to cart </button>
+                                        </div>
+                                    </div>
+                                    <div className="desc">
+                                        <h5> Description </h5>
+                                        Fujitsu UH-X 12th Gen Intel Evo Core i7 13.3 inch(33cm) FHD IPS 400Nits Thin & Light Laptop(16GB/512GB SSD/Windows11/Office/Iris Xe
+                                    </div>
+                                </>
+                            ))} */}
+
+                            <div>
+                                {selectedProduct ? (
+                                    <div className="title">{selectedProduct.title}</div>
+                                ) : (
+                                    ProductData.map((product) => (
+                                        <div className="title" onClick={() => handleProductClick(product.id)}>
+                                            {product.title}
+                                        </div>
+                                    ))
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>

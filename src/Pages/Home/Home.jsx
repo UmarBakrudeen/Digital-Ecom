@@ -148,56 +148,77 @@ const Home = ({ cart, setCart }) => {
                     <h6> Music & Gaming </h6>
                     <p> 10 Items </p>
                   </div>
-                  <img src="Assets/images/camera.jpg" alt="" />
+                  <img src="https://imgs.search.brave.com/Rk1Psbkf2ta_bcfFAmMNRrIe0XPxKGJlEjTDIlvWpcs/rs:fit:1200:1158:1/g:ce/aHR0cDovL3d3dy5w/bmdhbGwuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy81L0FwcGxl/LWlQaG9uZS0xMi1Q/TkctRG93bmxvYWQt/SW1hZ2UucG5n" alt="" className="img-fluid" />
                 </div>
                 <div className="category__items">
                   <div>
                     <h6> Smart Tv </h6>
                     <p> 10 Items </p>
                   </div>
-                  <img src="Assets/images/tv.jpg" alt="" />
+                  <img src="https://imgs.search.brave.com/yz12FqBBjHXRu2WRp7PjFjccWAw9dOsfN-OD2G6nneM/rs:fit:1200:1072:1/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzg1Lzkz/Lzk4Lzg1OTM5ODA3/MTkzNTdhYmMwMjFl/OTRjNTUyNDIwN2Nh/LnBuZw"
+                    alt=""
+                    className="img-fluid"
+                  />
                 </div>
                 <div className="category__items">
                   <div>
                     <h6> Smart Watches </h6>
                     <p> 10 Items </p>
                   </div>
-                  <img src="Assets/images/headphone.jpg" alt="headphone" />
+                  <img src="https://imgs.search.brave.com/Rk1Psbkf2ta_bcfFAmMNRrIe0XPxKGJlEjTDIlvWpcs/rs:fit:1200:1158:1/g:ce/aHR0cDovL3d3dy5w/bmdhbGwuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy81L0FwcGxl/LWlQaG9uZS0xMi1Q/TkctRG93bmxvYWQt/SW1hZ2UucG5n"
+                    alt="headphone"
+                    className="img-fluid"
+                  />
                 </div>
                 <div className="category__items">
                   <div>
                     <h6> Cameras </h6>
                     <p> 10 Items </p>
                   </div>
-                  <img src="Assets/images/camera.jpg" alt="" />
+                  <img src="https://imgs.search.brave.com/Q3ZbKvzTTtKHOgBOg0jDZCcEcLJ3XYmnZ8sVk4zql-o/rs:fit:1200:919:1/g:ce/aHR0cHM6Ly9pMDEu/YXBwbWlmaWxlLmNv/bS93ZWJmaWxlL2ds/b2JhbGltZy9wcm9k/dWN0cy9wYy9yZWRt/aS1ub3RlLTgvc2Vj/dGlvbi0wNF9zbGlk/ZXJfMS5wbmc"
+                    alt=""
+                    className="img-fluid"
+                  />
                 </div>
                 <div className="category__items">
                   <div>
                     <h6> Music & Gaming </h6>
                     <p> 10 Items </p>
                   </div>
-                  <img src="Assets/images/camera.jpg" alt="" />
+                  <img src="https://imgs.search.brave.com/6-GRFoxjnYepTxfeP1mng2_lu2M8_UmCLZhilQMtaXY/rs:fit:820:520:1/g:ce/aHR0cHM6Ly9mcmVl/cG5naW1nLmNvbS9k/b3dubG9hZC9lbGVj/dHJvbmljcy84NTU4/NS1nYW1pbmctbGFw/dG9wLW11bHRpbWVk/aWEtZ2FtZS1jb21w/dXRlci12aWRlby10/ZWNobm9sb2d5LnBu/Zw"
+                    alt=""
+                    className="img-fluid"
+                  />
                 </div>
                 <div className="category__items">
                   <div>
                     <h6> Smart Tv </h6>
                     <p> 10 Items </p>
                   </div>
-                  <img src="Assets/images/tv.jpg" alt="" />
+                  <img src="https://imgs.search.brave.com/McATdvwmsHvXA1ENB4rS421uP8cdRVj-8K5QcYJG2iw/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvNS9HYW1p/bmctSGVhZHNldC1Q/TkctSEQtSW1hZ2Ut/MS5wbmc"
+                    alt=""
+                    className="img-fluid"
+                  />
                 </div>
                 <div className="category__items">
                   <div>
                     <h6> Smart Watches </h6>
                     <p> 10 Items </p>
                   </div>
-                  <img src="Assets/images/headphone.jpg" alt="headphone" />
+                  <img src="https://imgs.search.brave.com/_IhaUdN-JT2xebKoXBkEFoEY8_pRcc_DTVJqGz9AAU0/rs:fit:1000:1000:1/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvZ2FtZXBhZC9n/YW1lcGFkX1BORzk1/LnBuZw"
+                    alt="headphone"
+                    className="img-fluid"
+                  />
                 </div>
                 <div className="category__items">
                   <div>
                     <h6> Cameras </h6>
                     <p> 10 Items </p>
                   </div>
-                  <img src="Assets/images/camera.jpg" alt="" />
+                  <img src="Assets/images/camera.jpg"
+                    alt=""
+                    className="img-fluid"
+                  />
                 </div>
               </div>
             </div>
